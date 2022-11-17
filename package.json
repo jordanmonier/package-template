@@ -1,6 +1,6 @@
 {
   "name": "package-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A template used to create TypeScript packages.",
   "main": "./dist/esm/index.js",
   "scripts": {
