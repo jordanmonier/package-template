@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "before:init": ["yarn format", "yarn lint", "yarn test"],
+    "after:bump": ["rm -rf ./dist", "yarn build:cjs", "yarn build:esm"]
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release v${version}",
+    "commit": true,
+    "commitMessage": "chore: release v${version}",
+    "commitArgs": ["--no-verify"],
+    "tag": true,
+    "tagName": null,
+    "tagAnnotation": "Release v${version}",
+    "tagArgs": []
+  },
+  "npm": {
+    "publish": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "conventionalcommits",
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
